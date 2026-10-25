@@ -56,14 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal, activeTab, setA
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
-                  Med<span className="text-teal-600 dark:text-teal-400">Vault</span>
+                  Cura<span className="text-teal-600 dark:text-teal-400">Grid</span>
                 </span>
                 <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300 border border-teal-200 dark:border-teal-800 uppercase tracking-widest">
-                  Healthcare
+                  Clinical OS
                 </span>
               </div>
               <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-none">
-                Unified Medical Portal
+                Connected Health Grid
               </p>
             </div>
           </div>

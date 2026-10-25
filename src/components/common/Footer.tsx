@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
               <HeartPulse className="w-6 h-6 text-white" />
             </div>
             <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
-              Med<span className="text-teal-600 dark:text-teal-400">Vault</span>
+              Cura<span className="text-teal-600 dark:text-teal-400">Grid</span>
             </span>
           </div>
           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm font-medium">
