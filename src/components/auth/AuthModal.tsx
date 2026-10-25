@@ -124,19 +124,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden text-slate-900 dark:text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-sm animate-fade-in overflow-y-auto">
+      <div className="relative w-full max-w-lg max-h-[92vh] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-slate-900 dark:text-white my-auto">
         
         {/* Modal Header */}
-        <div className="p-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+        <div className="px-5 py-3.5 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between shrink-0">
           <div>
-            <h3 className="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-teal-600 dark:text-teal-400" />
               <span>
                 {activeTab === 'register' ? 'New Account Registration' : 'CuraGrid Portal Sign In'}
               </span>
             </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 font-medium mt-1">
+            <p className="text-[11px] text-slate-600 dark:text-slate-400 font-medium mt-0.5">
               {activeTab === 'register' ? 'Create new profile & link ABHA ID' : 'Select Role to Access Portal'}
             </p>
           </div>
@@ -148,14 +148,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
           </button>
         </div>
 
-        <div className="p-6 space-y-6">
+        <div className="p-5 space-y-3.5 overflow-y-auto overscroll-contain">
           
           {/* Role Selection Grid */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+            <label className="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
               Select Portal Role:
             </label>
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-2 gap-2">
               {roles.map((r) => {
                 const isSel = selectedRole === r.key;
 
@@ -164,7 +164,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
                     key={r.key}
                     type="button"
                     onClick={() => setSelectedRole(r.key)}
-                    className={`p-3 rounded-xl border text-left transition-all cursor-pointer flex items-start gap-3 ${
+                    className={`p-2 rounded-xl border text-left transition-all cursor-pointer flex items-start gap-2.5 ${
                       isSel
                         ? 'border-teal-600 bg-teal-50 dark:bg-teal-950 text-slate-900 dark:text-white font-extrabold shadow-sm'
                         : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100'
@@ -310,7 +310,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
 
           {/* TAB 2: NEW PATIENT REGISTRATION FORM */}
           {activeTab === 'register' && (
-            <form onSubmit={handleRegisterSubmit} autoComplete="off" className="space-y-4 text-xs">
+            <form onSubmit={handleRegisterSubmit} autoComplete="off" className="space-y-3 text-xs">
               <div>
                 <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Full Name *</label>
                 <input
@@ -320,7 +320,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
                   placeholder="Enter full name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                  className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
                 />
               </div>
 
@@ -333,7 +333,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
                   placeholder="Enter email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                  className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
                 />
               </div>
 
@@ -347,12 +347,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
                     placeholder="Enter 10-digit mobile number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="flex-1 p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                    className="flex-1 p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
                   />
                   <button
                     type="button"
                     onClick={handleSendOtp}
-                    className="px-3.5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs cursor-pointer whitespace-nowrap"
+                    className="px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs cursor-pointer whitespace-nowrap"
                   >
                     {otpSent ? 'OTP Sent ✓' : 'Send OTP'}
                   </button>
@@ -360,15 +360,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
               </div>
 
               {otpSent && (
-                <div>
-                  <label className="block font-bold text-emerald-600 dark:text-emerald-400 mb-1">Enter 6-Digit OTP Code *</label>
+                <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-500 animate-fade-in">
+                  <label className="block font-bold text-emerald-700 dark:text-emerald-300 mb-1">Enter 6-Digit OTP Code *</label>
                   <input
                     type="text"
                     autoComplete="off"
                     placeholder="Enter OTP (e.g. 584920)"
                     value={otpCode}
                     onChange={(e) => setOtpCode(e.target.value)}
-                    className="w-full p-2.5 rounded-xl border border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-slate-900 dark:text-white font-bold font-mono"
+                    className="w-full p-2 rounded-lg border border-emerald-400 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold font-mono text-center tracking-widest text-sm"
                   />
                 </div>
               )}
@@ -382,7 +382,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
                   placeholder="Create password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
+                  className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
                 />
               </div>
 
@@ -394,13 +394,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
                   placeholder="14-Digit ABHA Health ID (Optional)"
                   value={abhaId}
                   onChange={(e) => setAbhaId(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold font-mono text-[11px]"
+                  className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-bold font-mono text-[11px]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-md cursor-pointer flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-md cursor-pointer flex items-center justify-center gap-2 transition-colors mt-2"
               >
                 <UserPlus className="w-4 h-4" />
                 <span>Complete Registration & Launch Patient Portal</span>
