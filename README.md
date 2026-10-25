@@ -133,6 +133,26 @@ Visit `http://localhost:5173` to access the application.
 
 ---
 
+## 📸 Application Screenshots & Clinical UI Showcase
+
+| Landing Page & Real-Time Telemetry | Patient Portal & EMR Records |
+| :---: | :---: |
+| ![Landing Page](docs/screenshots/01_CuraGrid_Hero_Banner.png) | ![Patient Portal](docs/screenshots/02_Patient_EMR_Portal.png) |
+
+| Digital Consultation Pass | NABL Diagnostic Lab Report |
+| :---: | :---: |
+| ![Consultation Pass](docs/screenshots/03_Confirmed_Appointment_Pass.png) | ![Lab Report](docs/screenshots/04_Metropolis_Diagnostic_Lab_Report.png) |
+
+| Doctor Prescription Studio | Official Digital Prescription PDF |
+| :---: | :---: |
+| ![Doctor Studio](docs/screenshots/07_Doctor_Studio_Live_Preview.png) | ![Prescription PDF](docs/screenshots/06_Official_Digital_Prescription_PDF.png) |
+
+| Receptionist OPD Queue Desk | Cryptographic HIPAA & ABDM Security Audit |
+| :---: | :---: |
+| ![Receptionist Desk](docs/screenshots/08_Receptionist_Desk_OPD_Queue.png) | ![Audit Trail](docs/screenshots/10_HIPAA_ABDM_Security_Audit_Trail.png) |
+
+---
+
 ## 📁 Repository Structure
 
 ```text
